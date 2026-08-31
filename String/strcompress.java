@@ -15,10 +15,12 @@ public class strcompress{
             count=1;
         }
     }
+
     sb.append(count);
     return sb.toString();
 }
     public static void main(String args[]){
+        
         String str="aaaabbbccdddd";
         System.out.println(compress(str));
     }
