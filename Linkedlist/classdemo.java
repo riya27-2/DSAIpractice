@@ -83,6 +83,22 @@ public class classdemo {
         newNode.next = temp.next;
         temp.next=newNode;
     }
+
+    public int removeFirst(){
+        if(size == 0){
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val=head.data;
+            head = tail= null;
+            size=0;
+            return val;
+        }
+        int val= head.data;
+        head=head.next; 
+        size--;
+        return val;
+    }
     public static void main(String[] args) {
 
         classdemo ll = new classdemo();
@@ -99,5 +115,8 @@ public class classdemo {
         ll.add(2,3);
         ll.print();
         System.out.println(ll.size);
+
+        ll.removeFirst();
+        ll.print();
     }
 }
