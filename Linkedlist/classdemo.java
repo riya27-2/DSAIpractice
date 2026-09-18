@@ -125,6 +125,20 @@ public class classdemo {
 
 
     }
+    public int itrSearch(int key){
+        Node temp=head;
+        int i=0;
+
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp=temp.next;
+            i++;
+        }
+        return -1;
+
+    }
     public static void main(String[] args) {
 
         classdemo ll = new classdemo();
@@ -139,11 +153,10 @@ public class classdemo {
         ll.addLast(5);
 
         ll.add(2,3);
-        ll.print();
 
-        ll.removeLast();
         ll.print();
-        System.out.println(ll.size);
+        // System.out.println(ll.size);
+        System.out.println(ll.itrSearch(3));
 
 
 
