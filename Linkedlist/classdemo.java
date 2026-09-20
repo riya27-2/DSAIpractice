@@ -177,28 +177,53 @@ public class classdemo {
         head=prev;
 
     }
+
+   public static boolean isCycle(){
+    Node slow= head;
+    Node fast= head;
+
+    while(fast != null &&  fast.next != null){
+        slow=slow.next;
+        fast=fast.next.next;
+        if(slow == fast){
+            return true;
+        }
+    }
+    return false;
+
+   }
+
+    // public static void main(String[] args) {
+
+    //     classdemo ll = new classdemo();
+
+
+    //     ll.addFirst(2);
+
+    //     ll.addFirst(1);
+
+    //     ll.addLast(4);
+
+    //     ll.addLast(5);
+
+    //     ll.add(2,3);
+
+    //     ll.print();
+    //     // System.out.println(ll.size);
+    //     // System.out.println(ll.recSearch(3));
+    //     // System.out.println(ll.recSearch(10));
+
+    // ll.reverse();
+    // ll.print();
+
+
+    // }
     public static void main(String[] args) {
-
-        classdemo ll = new classdemo();
-
-
-        ll.addFirst(2);
-
-        ll.addFirst(1);
-
-        ll.addLast(4);
-
-        ll.addLast(5);
-
-        ll.add(2,3);
-
-        ll.print();
-        // System.out.println(ll.size);
-        // System.out.println(ll.recSearch(3));
-        // System.out.println(ll.recSearch(10));
-
-    ll.reverse();
-    ll.print();
+        head=new Node(1);
+        head.next=new Node(2);
+        head.next.next=new Node(3);
+        head.next.next.next=head;
+        System.out.println(isCycle());
 
 
     }
